@@ -392,15 +392,21 @@
     text-align: center;
     transition: color 0.2s;
   }
+  .node-item:not(.active) .node-dot {
+    opacity: 0.6;
+  }
+  .node-item:not(.active):hover .node-dot {
+    opacity: 1;
+  }
   .node-item.active .node-label { color: var(--white); }
   .node-item:hover .node-label { color: rgba(255,255,255,0.85); }
 
   .node-arrow {
     font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: rgba(74,155,196,0.5);
+    font-size: 14px;
+    color: rgba(74,155,196,0.4);
     position: absolute;
-    right: -8px; top: 20px;
+    right: -8px; top: 18px;
     z-index: 2;
   }
   .node-item:last-child .node-arrow { display: none; }
@@ -775,6 +781,18 @@
     .detection-card.dual { grid-template-columns: 1fr; }
   }
 </style>
+<script>
+  function showDetail(i) {
+    var details = document.querySelectorAll('.detail-content');
+    var nodes = document.querySelectorAll('.node-item');
+    for (var j = 0; j < details.length; j++) details[j].classList.remove('active');
+    for (var k = 0; k < nodes.length; k++) nodes[k].classList.remove('active');
+    var t = document.getElementById('detail-' + i);
+    if (t) t.classList.add('active');
+    if (nodes[i]) nodes[i].classList.add('active');
+  }
+  window.showDetail = showDetail;
+</script>
 </head>
 <body>
 
@@ -809,7 +827,7 @@
 
   <div class="hero-stats">
     <div class="stat">
-      <span class="stat-n">$257M</span>
+      <span class="stat-n">$170M+</span>
       <span class="stat-l">NS insured flood losses, July 2023</span>
     </div>
     <div class="stat">
@@ -817,8 +835,8 @@
       <span class="stat-l">culvert & bridge structures in NS</span>
     </div>
     <div class="stat">
-      <span class="stat-n">$75</span>
-      <span class="stat-l">CAD hardware cost per sensor node</span>
+      <span class="stat-n">~$75</span>
+      <span class="stat-l">CAD hardware cost per node (est.)</span>
     </div>
     <div class="stat">
       <span class="stat-n">&lt; 2 min</span>
@@ -834,7 +852,7 @@
       <span class="section-tag">The Problem</span>
       <h2 class="section-title">Small culverts. Big consequences.</h2>
       <p class="section-body">
-        Nova Scotia's July 2023 floods caused over $257M in insured losses. Many small road culverts failed with little warning — blocked or undersized, they backed up silently until washout. Most remain uninstrumented today.
+        Nova Scotia's July 2023 floods caused over $170M in insured losses. Many small road culverts failed with little warning — blocked or undersized, they backed up silently until washout. Most remain uninstrumented today.
       </p>
       <div class="fact-cards">
         <div class="fact-card">
@@ -842,7 +860,7 @@
           <p>Rain in 24 hours — three months' worth — during the 2023 event</p>
         </div>
         <div class="fact-card">
-          <span class="num">$257M</span>
+          <span class="num">$170M+</span>
           <p>Insured losses from the July 2023 Nova Scotia floods alone</p>
         </div>
         <div class="fact-card">
@@ -1019,6 +1037,7 @@
         <span class="node-label">Alert</span>
       </div>
     </div>
+    <p style="text-align:center; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.12em; color:rgba(255,255,255,0.25); margin-bottom:24px; text-transform:uppercase;">Select a component to explore</p>
 
     <div class="node-detail">
       <div class="detail-content active" id="detail-0">
@@ -1231,17 +1250,17 @@
   <p style="font-size:16px; color:rgba(255,255,255,0.5); max-width:420px; margin:0 auto 32px; font-weight:300; line-height:1.65;">Questions about the pilot proposal or the technology — reach out directly.</p>
   <div style="display:inline-flex; flex-direction:column; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 36px;">
     <span style="font-family:'Instrument Serif',serif; font-size:20px;">James Mathews</span>
-    <span style="font-family:'DM Mono',monospace; font-size:12px; color:var(--water); letter-spacing:0.06em;">jamesm553@gmail.com</span>
+    <a href="mailto:jamesm553@gmail.com" style="font-family:'DM Mono',monospace; font-size:12px; color:var(--water); letter-spacing:0.06em; text-decoration:none;">jamesm553@gmail.com</a>
     <span style="font-family:'DM Mono',monospace; font-size:12px; color:rgba(255,255,255,0.35); letter-spacing:0.06em;">Technology Engineer · IoT &amp; Infrastructure</span>
   </div>
 </section>
 
 <footer>
   <div class="logo">Culvert<span>Sense</span></div>
-  <p>PILOT PROPOSAL · HALIFAX WATER · 2026 · NOT FOR REDISTRIBUTION</p>
+  <p>PILOT PROPOSAL · HALIFAX WATER · 2026</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Define showDetail globally so inline onclick can find it
   window.showDetail = function(i) {
     document.querySelectorAll('.detail-content').forEach(d => d.classList.remove('active'));
