@@ -780,6 +780,88 @@
     .detection-header, .detection-cards { grid-template-columns: 1fr; }
     .detection-card.dual { grid-template-columns: 1fr; }
   }
+
+  /* ── Manhole section ── */
+  .manhole {
+    background: var(--sand);
+    color: var(--text);
+  }
+  .manhole .section-tag { color: var(--tide); }
+  .manhole .section-title { color: var(--text); }
+
+  .manhole-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .manhole-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: end;
+    margin-bottom: 56px;
+  }
+
+  .manhole-body { color: var(--text-2); }
+
+  .manhole-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .manhole-card {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    border-top: 3px solid var(--tide);
+  }
+
+  .manhole-card-title {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .manhole-card-body {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-2);
+  }
+
+  .signal-note {
+    margin-top: 36px;
+    background: white;
+    border-radius: 14px;
+    padding: 28px 32px;
+    border-left: 4px solid var(--tide);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .signal-note-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .signal-note-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  .signal-note-text strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .manhole-header { grid-template-columns: 1fr; gap: 32px; }
+    .manhole-grid { grid-template-columns: 1fr; }
+  }
 </style>
 <script>
   function showDetail(i) {
@@ -817,7 +899,7 @@
       Know before the<br><em>water rises</em>
     </h1>
     <p class="hero-sub">
-      Low-cost wireless sensors that detect culvert flooding 30–60 minutes before overtopping — giving operations teams time to respond.
+      Low-cost wireless sensors that detect culvert flooding 30–60 minutes before overtopping, giving operations teams time to respond.
     </p>
     <div class="hero-ctas">
       <a href="#system" class="btn-primary">See how it works</a>
@@ -857,20 +939,13 @@
       <div class="fact-cards">
         <div class="fact-card">
           <span class="num">250mm</span>
-          <p>Rain in 24 hours — three months' worth — during the 2023 event</p>
+          <p>Rain in 24 hours (three months' worth) during the 2023 event</p>
         </div>
         <div class="fact-card">
           <span class="num">$170M+</span>
           <p>Insured losses from the July 2023 Nova Scotia floods alone</p>
         </div>
-        <div class="fact-card">
-          <span class="num">0</span>
-          <p>Upstream sensors on most small culverts across Nova Scotia</p>
-        </div>
-        <div class="fact-card">
-          <span class="num">30–60 min</span>
-          <p>Early warning window that could allow operational response</p>
-        </div>
+
       </div>
     </div>
     <div class="flood-visual">
@@ -1046,14 +1121,13 @@
         <div class="detail-specs">
           <span class="spec-pill spec-blue">ESP32 microcontroller</span>
           <span class="spec-pill spec-blue">JSN-SR04T ultrasonic</span>
-          <span class="spec-pill spec-blue">Battery powered</span>
           <span class="spec-pill spec-blue">Solar option available</span>
           <span class="spec-pill spec-gray">~$40–75 CAD/node</span>
         </div>
       </div>
       <div class="detail-content" id="detail-1">
         <div class="detail-title">LoRaWAN Gateway</div>
-        <p class="detail-body">A single gateway receives transmissions from sensor nodes up to 2–10km away over LoRa radio — no cellular network needed. One gateway can serve dozens of sensor nodes across a catchment area. It forwards data over standard internet (ethernet or WiFi) to the cloud network server. If LoRa coverage is unavailable at a site, NB-IoT or standard LTE are fallback options using the same sensor hardware.</p>
+        <p class="detail-body">A single gateway receives transmissions from sensor nodes up to 2–10km away over LoRa radio. No cellular network needed. One gateway can serve dozens of sensor nodes across a catchment area. It forwards data over standard internet (ethernet or WiFi) to the cloud network server. If LoRa coverage is unavailable at a site, NB-IoT or standard LTE are fallback options using the same sensor hardware.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-green">2–10 km radio range</span>
           <span class="spec-pill spec-green">One gateway, many sensors</span>
@@ -1063,17 +1137,18 @@
       </div>
       <div class="detail-content" id="detail-2">
         <div class="detail-title">Network Server</div>
-        <p class="detail-body">The Things Network (TTN) is a free, open LoRaWAN network server that receives, decodes, and routes sensor data. Alert logic runs here — configurable thresholds (absolute water level) and rate-of-rise detection (e.g. water rising faster than 5cm/min). Over time, readings can be correlated with Environment Canada rainfall data and local catchment characteristics to build predictive models that alert before water even begins to rise.</p>
+        <p class="detail-body">Rather than relying on public community coverage, a single gateway deployed at a Halifax Water facility gives full operational control over the network. One rooftop-mounted gateway can cover several kilometres of urban infrastructure. Data routes through The Things Stack — the same open-source network server software that powers TTN — which Halifax Water would operate privately. Alert logic runs here: configurable thresholds and rate-of-rise detection. Over time, readings correlate with Environment Canada rainfall data to build predictive models.</p>
         <div class="detail-specs">
-          <span class="spec-pill spec-gray">The Things Network (TTN)</span>
+          <span class="spec-pill spec-gray">Halifax Water-operated gateway</span>
+          <span class="spec-pill spec-gray">The Things Stack (open source)</span>
           <span class="spec-pill spec-gray">Threshold + rate-of-rise logic</span>
           <span class="spec-pill spec-gray">Weather API integration</span>
-          <span class="spec-pill spec-gray">Cloud-hosted, free tier</span>
+          <span class="spec-pill spec-gray">Full network ownership</span>
         </div>
       </div>
       <div class="detail-content" id="detail-3">
         <div class="detail-title">Alert</div>
-        <p class="detail-body">When a threshold is breached, a webhook fires within seconds — delivering an alert to email, SMS, or an operations dashboard. The 30–60 minute early warning window (before overtopping) gives field crews time to inspect, close roads proactively, or deploy temporary measures. All data is logged for post-event analysis and model refinement.</p>
+        <p class="detail-body">When a threshold is breached, a webhook fires within seconds, delivering an alert to email, SMS, or an operations dashboard. The 30–60 minute early warning window gives field crews time to inspect, close roads proactively, or deploy temporary measures. All data is logged for post-event analysis and model refinement.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-amber">Email / SMS / dashboard</span>
           <span class="spec-pill spec-amber">30–60 min early warning</span>
@@ -1091,7 +1166,7 @@
     <div class="why-header">
       <div>
         <span class="section-tag">Connectivity Options</span>
-        <h2 class="section-title">Why LoRaWAN — and what if it isn't available?</h2>
+        <h2 class="section-title">Why LoRaWAN, and what if it isn't available?</h2>
       </div>
       <p class="section-body why-body">
         LoRaWAN is the preferred technology — but the sensor hardware works with multiple connectivity options. If LoRa coverage doesn't reach a specific site, we switch the radio module and keep everything else identical.
@@ -1144,7 +1219,7 @@
         <h2 class="section-title">More than just<br>rising water.</h2>
       </div>
       <p class="section-body detection-body">
-        A single upstream sensor gives you two distinct alert types — flood early warning and blockage detection — from the same hardware. The difference lies in how fast the water rises, and whether rainfall explains it.
+        A single upstream sensor gives you two distinct alert types — flood early warning and blockage detection, from the same hardware. The difference lies in how fast the water rises and whether rainfall explains it.
       </p>
     </div>
 
@@ -1154,7 +1229,7 @@
       <div class="detection-card">
         <span class="section-tag" style="color:var(--water); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; display:block;">Flood early warning</span>
         <div class="detection-card-title">Water level rising with rainfall</div>
-        <p class="detection-card-body">During intense rainfall, upstream water backs up against the culvert as flow exceeds capacity. The sensor detects the rising surface and fires an alert 30–60 minutes before overtopping — giving operations teams time to respond before road damage occurs.</p>
+        <p class="detection-card-body">During intense rainfall, upstream water backs up against the culvert as flow exceeds capacity. The sensor detects the rising surface and fires an alert 30–60 minutes before overtopping, giving operations teams time to respond before road damage occurs.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-blue">Threshold alert</span>
           <span class="spec-pill spec-blue">Rate-of-rise alert</span>
@@ -1166,7 +1241,7 @@
       <div class="detection-card">
         <span class="section-tag" style="color:rgba(255,180,100,0.8); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; display:block;">Blockage detection</span>
         <div class="detection-card-title">Water rising faster than rain explains</div>
-        <p class="detection-card-body">When debris blocks the culvert inlet, water backs up faster than rainfall alone would predict. If the sensor is mounted directly above the inlet, floating debris also reflects the ultrasonic pulse back sooner — giving a falsely high reading that triggers an alert. A blockage in dry weather is easy to clear. A blockage during a storm becomes a washout.</p>
+        <p class="detection-card-body">When debris blocks the culvert inlet, water backs up faster than rainfall alone would predict. If the sensor is mounted directly above the inlet, floating debris also reflects the ultrasonic pulse back sooner — giving a falsely high reading that triggers an alert. A blockage caught in dry weather is easy to clear. During a storm it becomes a washout.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-amber">Anomalous rate-of-rise</span>
           <span class="spec-pill spec-amber">Debris surface reflection</span>
@@ -1178,7 +1253,7 @@
       <div class="detection-card dual">
         <div>
           <div class="detection-card-title" style="margin-bottom:8px;">Phase 2: upstream + downstream sensors</div>
-          <p class="detection-card-body" style="margin-bottom:20px;">Adding a second sensor downstream of the culvert allows direct flow differential measurement — if upstream is rising but downstream isn't, the culvert is blocked. This removes ambiguity and gives maintenance teams a precise, actionable signal even without rainfall context.</p>
+          <p class="detection-card-body" style="margin-bottom:20px;">Adding a second sensor downstream of the culvert allows direct flow differential measurement. If upstream is rising but downstream is not, the culvert is blocked. This gives maintenance teams a precise, actionable signal even without rainfall context.</p>
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-self:start;">
           <div>
@@ -1215,7 +1290,7 @@
         <h2 class="section-title">One site. Three months. No cost to Halifax Water.</h2>
       </div>
       <p class="section-body pilot-body">
-        The proposal is deliberately small — a single proof-of-concept deployment at a known problem culvert. Data is advisory only. No operational dependency. If it works, phase 2 follows naturally.
+        The proposal is deliberately small — a single proof-of-concept deployment at a known problem culvert. Data is advisory only. No operational dependency.
       </p>
     </div>
     <div class="phases">
@@ -1223,22 +1298,74 @@
         <span class="phase-num">1</span>
         <span class="phase-tag">Months 1–3</span>
         <div class="phase-title">Proof of concept</div>
-        <p class="phase-body">One sensor node at one candidate culvert identified by Halifax Water. Data streams to a shared dashboard. Simple threshold alerts. Hardware supplied at no cost. Focus: does the sensor work reliably in NS conditions?</p>
+        <p class="phase-body">One sensor node at one candidate culvert identified by Halifax Water. Data streams to a shared dashboard. Simple threshold alerts. Hardware supplied at no cost.</p>
+        <div style="margin-top:16px; margin-bottom:4px; font-family:'DM Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.3);">Success looks like</div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:16px;">
+          <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Sensor survives a period of exposure to Nova Scotia weather without failure</li>
+          <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Readings are consistent and credible vs. visual inspection</li>
+          <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>At least one real rainfall event captured and logged</li>
+          <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Alert fires correctly when water level rises</li>
+          <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Battery life exceeds 3 months in field conditions</li>
+        </ul>
         <div class="phase-cost">Hardware: ~$150 CAD · No ongoing cost to HW</div>
       </div>
       <div class="phase">
         <span class="phase-num">2</span>
         <span class="phase-tag">Months 4–9</span>
         <div class="phase-title">Multi-site expansion</div>
-        <p class="phase-body">If phase 1 is successful, expand to 3–5 known problem sites. Introduce weather API correlation. Begin building per-culvert response curves. Explore joint grant application (Sustainable Communities Challenge Fund).</p>
-        <div class="phase-cost">Est. cost: $500–800 CAD hardware · grant-fundable</div>
+        <p class="phase-body">Expand to 3–5 known problem sites across Halifax Water's network. This is where the system becomes a product. Sensor data is correlated with Environment Canada rainfall, per-culvert response curves are built, and anomaly detection begins to distinguish blockage from flood events. A shared dashboard gives Halifax Water real-time visibility across all monitored sites.</p>
+        <div class="phase-cost">Est. cost: ~$2,500–3,000 CAD · grant-fundable</div>
       </div>
       <div class="phase">
         <span class="phase-num">3</span>
         <span class="phase-tag">Year 2+</span>
         <div class="phase-title">Predictive intelligence</div>
-        <p class="phase-body">ML model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises — based on rainfall forecast and catchment characteristics. System becomes a climate adaptation dataset for NS infrastructure.</p>
-        <div class="phase-cost">Potential grant funding: $75k–200k CAD</div>
+        <p class="phase-body">ML model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises, based on rainfall forecast and catchment characteristics. Node deployment scales across Halifax Water's full culvert and manhole network — and potentially province-wide across NSTIR road culverts and other NS municipalities. System becomes a permanent climate adaptation dataset for NS infrastructure.</p>
+        <div class="phase-cost">Potential grant funding via HRM, universities, or non-profit partners · province-wide scaling</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MANHOLE ── -->
+<section class="manhole" style="padding-top:32px;">
+  <div class="manhole-inner">
+    <div class="manhole-header" style="margin-bottom:32px;">
+      <div>
+        <h2 class="section-title" style="margin-bottom:12px;">Beyond Culverts</h2>
+        <p class="section-body" style="font-size:18px; color:var(--text-2); margin-bottom:0;">Application in manhole and wastewater networks.</p>
+      </div>
+      <p class="section-body manhole-body">
+        The same sensor hardware has a direct application inside manholes — monitoring wastewater and stormwater network surcharge before overflow occurs. The sensor mounts inside the lid pointing downward at the water level below. Hardware costs are slightly higher than culvert nodes due to the more demanding environment, and sensor selection differs, but the network architecture and data platform remain identical.
+      </p>
+    </div>
+
+    <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:36px;">
+      <li style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background:white; border-radius:10px;">
+        <span style="color:var(--tide); font-size:18px; flex-shrink:0; margin-top:1px;">↑</span>
+        <div>
+          <span style="font-weight:500; font-size:14px; color:var(--text);">Surcharge early warning</span>
+          <span style="font-size:13px; color:var(--text-2);"> — alerts operations teams before overflow reaches the surface, avoiding public health incidents and regulatory breaches.</span>
+        </div>
+      </li>
+      <li style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background:white; border-radius:10px;">
+        <span style="color:var(--tide); font-size:18px; flex-shrink:0; margin-top:1px;">〰</span>
+        <div>
+          <span style="font-weight:500; font-size:14px; color:var(--text);">Inflow &amp; infiltration detection</span>
+          <span style="font-size:13px; color:var(--text-2);"> — abnormal water rise in dry weather identifies where groundwater is entering the network, directly informing pipe rehabilitation priorities.</span>
+        </div>
+      </li>
+    </ul>
+
+    <div style="margin-top:20px; background:white; border-radius:14px; padding:28px; border-top:3px solid #c04a20;">
+      <div style="font-weight:500; font-size:15px; margin-bottom:10px; color:var(--text);">Technical considerations</div>
+      <p style="font-size:13px; line-height:1.65; color:var(--text-2);">Manholes require a different sensor to culverts due to the confined environment, corrosive atmosphere, and risk of submersion. Gateway placement is also more critical — rooftop mounting is required for reliable LoRaWAN signal penetration through the cover.</p>
+    </div>
+
+    <div class="signal-note">
+      <div class="signal-note-icon">📡</div>
+      <div class="signal-note-text">
+        <strong>Does LoRaWAN work through a metal manhole cover?</strong> Yes, with a rooftop-mounted gateway. Real-world tests confirm signal transmission through metal shaft covers over nearly 1km — even with a van parked on top — provided the gateway is elevated (35m in the documented case). Gateways below 10m show poor penetration. A site-by-site coverage survey would form part of any manhole pilot. <a href="https://smartmakers.io/en/lorawan-range-part-2-range-and-coverage-of-lorawan-in-practice/" target="_blank" style="color:var(--tide); font-size:12px; text-decoration:none; border-bottom:1px solid rgba(42,100,150,0.3);">Source: SmartMakers ↗</a>
       </div>
     </div>
   </div>
@@ -1247,7 +1374,7 @@
 <!-- ── CONTACT ── -->
 <section style="background: var(--navy); text-align: center; padding: 80px 48px;">
   <h2 style="font-family: 'Instrument Serif', serif; font-size: clamp(28px,4vw,48px); letter-spacing:-1.5px; margin-bottom:16px;">Get in touch</h2>
-  <p style="font-size:16px; color:rgba(255,255,255,0.5); max-width:420px; margin:0 auto 32px; font-weight:300; line-height:1.65;">Questions about the pilot proposal or the technology — reach out directly.</p>
+  <p style="font-size:16px; color:rgba(255,255,255,0.5); max-width:420px; margin:0 auto 32px; font-weight:300; line-height:1.65;">Questions about the pilot proposal or the technology. Reach out directly.</p>
   <div style="display:inline-flex; flex-direction:column; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 36px;">
     <span style="font-family:'Instrument Serif',serif; font-size:20px;">James Mathews</span>
     <a href="mailto:jamesm553@gmail.com" style="font-family:'DM Mono',monospace; font-size:12px; color:var(--water); letter-spacing:0.06em; text-decoration:none;">jamesm553@gmail.com</a>
