@@ -37,7 +37,6 @@
     overflow-x: hidden;
   }
 
-  /* ── Hero ── */
   .hero {
     min-height: 100vh;
     display: grid;
@@ -52,7 +51,6 @@
     z-index: 0;
   }
 
-  /* animated water ripples */
   .ripple {
     position: absolute;
     border-radius: 50%;
@@ -206,7 +204,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── Sections ── */
   section { padding: 96px 48px; }
 
   .section-tag {
@@ -233,7 +230,6 @@
     max-width: 560px;
   }
 
-  /* ── Problem section ── */
   .problem {
     background: var(--sand);
     color: var(--text);
@@ -274,10 +270,6 @@
   }
   .fact-card p { font-size: 13px; color: var(--text-2); line-height: 1.5; }
 
-  /* flood event visual */
-
-
-  /* ── Flood cross-section visual ── */
   .flood-visual {
     border-radius: 16px;
     overflow: hidden;
@@ -287,17 +279,12 @@
     font-family: 'DM Mono', monospace;
   }
 
-  /* SVG fills the box */
   .flood-visual svg {
     width: 100%;
     height: 100%;
     display: block;
   }
 
-  @keyframes water-rise {
-    0%   { height: 45px; y: 175px; }
-    100% { height: 68px; y: 152px; }
-  }
   @keyframes flow-right {
     0%   { stroke-dashoffset: 40; }
     100% { stroke-dashoffset: 0; }
@@ -306,11 +293,9 @@
     0%   { stroke-dashoffset: 0; }
     100% { stroke-dashoffset: 40; }
   }
-  .upstream-water { animation: water-rise 3s ease-in-out infinite alternate; }
   .flow-arrow-up   { animation: flow-left  1.8s linear infinite; }
   .flow-arrow-down { animation: flow-right 2.2s linear infinite; }
 
-  /* ── System diagram ── */
   .system {
     background: var(--navy);
     color: var(--white);
@@ -332,7 +317,6 @@
 
   .system-body { color: rgba(255,255,255,0.6); }
 
-  /* interactive nodes */
   .nodes {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -341,9 +325,7 @@
     margin-bottom: 48px;
   }
 
-  .node-connector {
-    display: none;
-  }
+  .node-connector { display: none; }
 
   .node-item {
     position: relative;
@@ -392,12 +374,8 @@
     text-align: center;
     transition: color 0.2s;
   }
-  .node-item:not(.active) .node-dot {
-    opacity: 0.6;
-  }
-  .node-item:not(.active):hover .node-dot {
-    opacity: 1;
-  }
+  .node-item:not(.active) .node-dot { opacity: 0.6; }
+  .node-item:not(.active):hover .node-dot { opacity: 1; }
   .node-item.active .node-label { color: var(--white); }
   .node-item:hover .node-label { color: rgba(255,255,255,0.85); }
 
@@ -411,7 +389,6 @@
   }
   .node-item:last-child .node-arrow { display: none; }
 
-  /* detail panel */
   .node-detail {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
@@ -440,9 +417,7 @@
     max-width: 600px;
   }
 
-  .detail-specs {
-    display: flex; gap: 24px; flex-wrap: wrap;
-  }
+  .detail-specs { display: flex; gap: 24px; flex-wrap: wrap; }
 
   .spec-pill {
     font-family: 'DM Mono', monospace;
@@ -456,7 +431,6 @@
   .spec-gray  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.1); }
   .spec-amber { background: rgba(212,134,10,0.15);  color: #f5c842;     border: 1px solid rgba(212,134,10,0.25); }
 
-  /* ── Why LoRaWAN ── */
   .why {
     background: var(--mist);
     color: var(--text);
@@ -464,10 +438,7 @@
   .why .section-tag { color: var(--tide); }
   .why .section-title { color: var(--text); }
 
-  .why-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .why-inner { max-width: 1100px; margin: 0 auto; }
 
   .why-header {
     display: grid;
@@ -497,12 +468,7 @@
   .compare-card.ok-card   { border-top-color: var(--slate); }
   .compare-card.bad-card  { border-top-color: #ccc; opacity: 0.65; }
 
-  .compare-name {
-    font-weight: 500;
-    font-size: 15px;
-    margin-bottom: 8px;
-    color: var(--text);
-  }
+  .compare-name { font-weight: 500; font-size: 15px; margin-bottom: 8px; color: var(--text); }
   .compare-badge {
     font-family: 'DM Mono', monospace;
     font-size: 10px;
@@ -522,17 +488,10 @@
   .cr-key { color: var(--text-2); }
   .cr-val { font-weight: 500; color: var(--text); }
 
-  /* ── Pilot ── */
-  .pilot {
-    background: var(--ocean);
-    color: var(--white);
-  }
+  .pilot { background: var(--ocean); color: var(--white); }
   .pilot .section-tag { color: var(--foam); }
 
-  .pilot-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .pilot-inner { max-width: 1100px; margin: 0 auto; }
 
   .pilot-header {
     display: grid;
@@ -601,98 +560,10 @@
     letter-spacing: 0.06em;
   }
 
-  
-
-  /* ── CTA ── */
-  .cta-section {
-    background: var(--navy);
-    text-align: center;
-    padding: 120px 48px;
-  }
-
-  .cta-title {
-    font-family: 'Instrument Serif', serif;
-    font-size: clamp(36px, 5vw, 64px);
-    letter-spacing: -2px;
-    line-height: 1.05;
-    margin-bottom: 20px;
-  }
-  .cta-title em { color: var(--water); font-style: italic; }
-
-  .cta-sub {
-    font-size: 17px;
-    color: rgba(255,255,255,0.5);
-    max-width: 480px;
-    margin: 0 auto 36px;
-    font-weight: 300;
-    line-height: 1.65;
-  }
-
-  .contact-block {
-    display: inline-flex;
-    flex-direction: column;
-    gap: 6px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 24px 36px;
-    margin-top: 16px;
-  }
-
-  .contact-name {
-    font-family: 'Instrument Serif', serif;
-    font-size: 20px;
-  }
-
-  .contact-detail {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px;
-    color: var(--water);
-    letter-spacing: 0.06em;
-  }
-
-  footer {
-    background: rgba(0,0,0,0.3);
-    padding: 24px 48px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  footer .logo { font-size: 16px; }
-
-  footer p {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.06em;
-  }
-
-  /* responsive */
-  @media (max-width: 768px) {
-    nav { padding: 20px 24px; }
-    section { padding: 64px 24px; }
-    .problem-grid, .system-header, .why-header, .pilot-header, .funding-header { grid-template-columns: 1fr; gap: 32px; }
-    .nodes { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .node-connector { display: none; }
-    .compare-grid, .phases, .funding-cards { grid-template-columns: 1fr; }
-    .fact-cards { grid-template-columns: 1fr; }
-    .stat { padding: 16px 24px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-  }
-
-  /* ── Detection section ── */
-  .detection {
-    background: var(--navy);
-    color: var(--white);
-  }
+  .detection { background: var(--navy); color: var(--white); }
   .detection .section-tag { color: var(--water); }
 
-  .detection-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .detection-inner { max-width: 1100px; margin: 0 auto; }
 
   .detection-header {
     display: grid;
@@ -754,12 +625,7 @@
   .dual-col-title.pro { color: var(--water); }
   .dual-col-title.con { color: rgba(255,180,100,0.8); }
 
-  .dual-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .dual-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
   .dual-list li {
     font-size: 13px;
@@ -769,116 +635,25 @@
     position: relative;
   }
 
-  .dual-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: rgba(255,255,255,0.2);
-  }
+  .dual-list li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.2); }
 
   @media (max-width: 768px) {
+    nav { padding: 20px 24px; }
+    section { padding: 64px 24px; }
+    .problem-grid, .system-header, .why-header, .pilot-header { grid-template-columns: 1fr; gap: 32px; }
+    .nodes { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .compare-grid, .phases { grid-template-columns: 1fr; }
+    .fact-cards { grid-template-columns: 1fr; }
+    .stat { padding: 16px 24px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
     .detection-header, .detection-cards { grid-template-columns: 1fr; }
     .detection-card.dual { grid-template-columns: 1fr; }
   }
-
-  /* ── Manhole section ── */
-  .manhole {
-    background: var(--sand);
-    color: var(--text);
-  }
-  .manhole .section-tag { color: var(--tide); }
-  .manhole .section-title { color: var(--text); }
-
-  .manhole-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .manhole-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-    align-items: end;
-    margin-bottom: 56px;
-  }
-
-  .manhole-body { color: var(--text-2); }
-
-  .manhole-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-  }
-
-  .manhole-card {
-    background: white;
-    border-radius: 14px;
-    padding: 28px;
-    border-top: 3px solid var(--tide);
-  }
-
-  .manhole-card-title {
-    font-weight: 500;
-    font-size: 15px;
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-
-  .manhole-card-body {
-    font-size: 13px;
-    line-height: 1.65;
-    color: var(--text-2);
-  }
-
-  .signal-note {
-    margin-top: 36px;
-    background: white;
-    border-radius: 14px;
-    padding: 28px 32px;
-    border-left: 4px solid var(--tide);
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-  }
-
-  .signal-note-icon {
-    font-size: 20px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .signal-note-text {
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--text-2);
-  }
-
-  .signal-note-text strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  @media (max-width: 768px) {
-    .manhole-header { grid-template-columns: 1fr; gap: 32px; }
-    .manhole-grid { grid-template-columns: 1fr; }
-  }
 </style>
-<script>
-  function showDetail(i) {
-    var details = document.querySelectorAll('.detail-content');
-    var nodes = document.querySelectorAll('.node-item');
-    for (var j = 0; j < details.length; j++) details[j].classList.remove('active');
-    for (var k = 0; k < nodes.length; k++) nodes[k].classList.remove('active');
-    var t = document.getElementById('detail-' + i);
-    if (t) t.classList.add('active');
-    if (nodes[i]) nodes[i].classList.add('active');
-  }
-  window.showDetail = showDetail;
-</script>
 </head>
 <body>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-bg">
     <div class="ripple"></div>
@@ -895,12 +670,8 @@
 
   <div class="hero-content">
     <span class="hero-tag">LoRaWAN · Early Warning · Infrastructure</span>
-    <h1 class="hero-title">
-      Know before the<br><em>water rises</em>
-    </h1>
-    <p class="hero-sub">
-      Low-cost wireless sensors that detect culvert flooding 30–60 minutes before overtopping, giving operations teams time to respond.
-    </p>
+    <h1 class="hero-title">Know before the<br><em>water rises</em></h1>
+    <p class="hero-sub">Low-cost wireless sensors that detect culvert flooding 30–60 minutes before overtopping, giving operations teams time to respond.</p>
     <div class="hero-ctas">
       <a href="#system" class="btn-primary">See how it works</a>
       <a href="#pilot" class="btn-ghost">View pilot proposal</a>
@@ -908,175 +679,86 @@
   </div>
 
   <div class="hero-stats">
-    <div class="stat">
-      <span class="stat-n">$170M+</span>
-      <span class="stat-l">NS insured flood losses, July 2023</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">4,000+</span>
-      <span class="stat-l">culvert & bridge structures in NS</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">~$75</span>
-      <span class="stat-l">CAD hardware cost per node (est.)</span>
-    </div>
-    <div class="stat">
-      <span class="stat-n">&lt; 2 min</span>
-      <span class="stat-l">alert latency from sensor to inbox</span>
-    </div>
+    <div class="stat"><span class="stat-n">$170M+</span><span class="stat-l">NS insured flood losses, July 2023</span></div>
+    <div class="stat"><span class="stat-n">4,000+</span><span class="stat-l">culvert & bridge structures in NS</span></div>
+    <div class="stat"><span class="stat-n">~$90</span><span class="stat-l">CAD hardware cost per node (est.)</span></div>
+    <div class="stat"><span class="stat-n">&lt; 2 min</span><span class="stat-l">alert latency from sensor to inbox</span></div>
   </div>
 </section>
 
-<!-- ── PROBLEM ── -->
+<!-- PROBLEM -->
 <section class="problem">
   <div class="problem-grid">
     <div>
       <span class="section-tag">The Problem</span>
       <h2 class="section-title">Small culverts. Big consequences.</h2>
-      <p class="section-body">
-        Nova Scotia's July 2023 floods caused over $170M in insured losses. Many small road culverts failed with little warning — blocked or undersized, they backed up silently until washout. Most remain uninstrumented today.
-      </p>
+      <p class="section-body">Nova Scotia's July 2023 floods caused over $170M in insured losses. Many small road culverts failed with little warning — blocked or undersized, they backed up silently until washout.</p>
       <div class="fact-cards">
-        <div class="fact-card">
-          <span class="num">250mm</span>
-          <p>Rain in 24 hours (three months' worth) during the 2023 event</p>
-        </div>
-        <div class="fact-card">
-          <span class="num">$170M+</span>
-          <p>Insured losses from the July 2023 Nova Scotia floods alone</p>
-        </div>
-
+        <div class="fact-card"><span class="num">250mm</span><p>Rain in 24 hours (three months' worth) during the 2023 event</p></div>
+        <div class="fact-card"><span class="num">$170M+</span><p>Insured losses from the July 2023 Nova Scotia floods alone</p></div>
       </div>
     </div>
     <div class="flood-visual">
       <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
-          <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5"
-                  markerWidth="5" markerHeight="5" orient="auto">
+          <marker id="arr-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
             <path d="M1 1L9 5L1 9" fill="none" stroke="rgba(74,155,196,0.6)" stroke-width="1.5"/>
           </marker>
-          <marker id="arr-blue-faint" viewBox="0 0 10 10" refX="8" refY="5"
-                  markerWidth="5" markerHeight="5" orient="auto">
+          <marker id="arr-blue-faint" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
             <path d="M1 1L9 5L1 9" fill="none" stroke="rgba(74,155,196,0.3)" stroke-width="1.5"/>
           </marker>
         </defs>
-
-        <!-- Sky -->
         <rect width="500" height="320" fill="#0d2a3e"/>
-
-        <!-- Ground left bank y=210 -->
         <rect x="0" y="210" width="165" height="110" fill="#1e3a28"/>
-        <!-- Ground right bank -->
         <rect x="335" y="238" width="165" height="82" fill="#1e3a28"/>
-
-        <!-- ROAD embankment — spans full height, culvert at its base -->
         <rect x="165" y="160" width="170" height="160" fill="#4a4a4a"/>
-        <!-- Road surface top strip -->
         <rect x="165" y="160" width="170" height="20" fill="#5a5a5a"/>
-        <text x="250" y="175" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.38)">ROAD SURFACE</text>
-
-        <!-- Culvert barrel: y=238, height=36 → bottom=274 -->
+        <text x="250" y="175" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="2" fill="rgba(255,255,255,0.38)">ROAD SURFACE</text>
         <rect x="208" y="238" width="84" height="36" rx="3" fill="#2a2a2a"/>
-        <rect x="208" y="238" width="84" height="36" rx="3"
-              fill="none" stroke="#666" stroke-width="1.2"/>
-        <line x1="230" y1="238" x2="230" y2="274" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="250" y1="238" x2="250" y2="274" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <line x1="270" y1="238" x2="270" y2="274" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-        <text x="250" y="260" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,0.28)">CULVERT</text>
+        <rect x="208" y="238" width="84" height="36" rx="3" fill="none" stroke="#666" stroke-width="1.2"/>
+        <text x="250" y="260" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" letter-spacing="1.5" fill="rgba(255,255,255,0.28)">CULVERT</text>
         <ellipse cx="208" cy="256" rx="7" ry="18" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
         <ellipse cx="292" cy="256" rx="7" ry="18" fill="#1a1a1a" stroke="#555" stroke-width="1"/>
-
-        <!-- Flow arrow through culvert at centre height (y=256) -->
-        <line x1="18" y1="256" x2="198" y2="256"
-              stroke="rgba(74,155,196,0.45)" stroke-width="1.8"
-              stroke-dasharray="7,5" class="flow-arrow-up"
-              marker-end="url(#arr-blue)"/>
-
-        <!-- UPSTREAM water: bottom fixed at y=274 (culvert bottom)
-             At rest:  y=210, height=64  → bottom=274 ✓
-             At peak:  y=186, height=88  → bottom=274 ✓ -->
+        <line x1="18" y1="256" x2="198" y2="256" stroke="rgba(74,155,196,0.45)" stroke-width="1.8" stroke-dasharray="7,5" class="flow-arrow-up" marker-end="url(#arr-blue)"/>
         <rect x="0" width="163" fill="rgba(74,155,196,0.5)">
-          <animate attributeName="y"      values="248;214;248" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-          <animate attributeName="height" values="64;88;64"    dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animate attributeName="y" values="248;214;248" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          <animate attributeName="height" values="64;88;64" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
         </rect>
-        <!-- Water surface shimmer line (matches y animation) -->
         <line x1="0" x2="163" stroke="rgba(168,212,232,0.7)" stroke-width="1.5">
           <animate attributeName="y1" values="248;214;248" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
           <animate attributeName="y2" values="248;214;248" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
         </line>
-        <!-- Danger threshold — fixed line near peak water -->
-        <line x1="0" y1="242" x2="163" y2="242"
-              stroke="rgba(255,100,100,0.7)" stroke-width="1.2" stroke-dasharray="5,4"/>
-        <text x="6" y="238" font-family="DM Mono, monospace" font-size="7.5"
-              letter-spacing="1" fill="rgba(255,100,100,0.8)">DANGER THRESHOLD</text>
-
-        <!-- UPSTREAM label -->
-        <text x="80" y="120" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="9" letter-spacing="1.5" fill="rgba(168,212,232,0.65)">UPSTREAM</text>
-        <text x="80" y="134" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="8" letter-spacing="1" fill="rgba(168,212,232,0.4)">WATER RISING ↑</text>
-
-        <!-- SENSOR ASSEMBLY — bracket mounted on bank above water line -->
-        <!-- Pole base bracket: y=168, well above peak water (y=186) -->
+        <line x1="0" y1="242" x2="163" y2="242" stroke="rgba(255,100,100,0.7)" stroke-width="1.2" stroke-dasharray="5,4"/>
+        <text x="6" y="238" font-family="DM Mono, monospace" font-size="7.5" letter-spacing="1" fill="rgba(255,100,100,0.8)">DANGER THRESHOLD</text>
+        <text x="80" y="120" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(168,212,232,0.65)">UPSTREAM</text>
+        <text x="80" y="134" text-anchor="middle" font-family="DM Mono, monospace" font-size="8" letter-spacing="1" fill="rgba(168,212,232,0.4)">WATER RISING ↑</text>
         <rect x="118" y="168" width="16" height="8" rx="2" fill="#5a6a74" stroke="#8a9ea8" stroke-width="0.8"/>
-        <!-- Vertical pole: from bracket up -->
         <line x1="126" y1="168" x2="126" y2="62" stroke="#8a9ea8" stroke-width="2.5"/>
-        <!-- Horizontal arm -->
         <line x1="126" y1="70" x2="88" y2="70" stroke="#8a9ea8" stroke-width="2"/>
         <circle cx="126" cy="70" r="3" fill="#8a9ea8"/>
-        <!-- Sensor housing -->
-        <rect x="64" y="60" width="48" height="20" rx="4"
-              fill="#1a3a52" stroke="#4a9bc4" stroke-width="1.5"/>
-        <!-- Transducer face pointing down -->
+        <rect x="64" y="60" width="48" height="20" rx="4" fill="#1a3a52" stroke="#4a9bc4" stroke-width="1.5"/>
         <rect x="80" y="80" width="16" height="5" rx="2" fill="#4a9bc4" opacity="0.85"/>
-        <text x="88" y="73" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="7" fill="#a8d4e8" letter-spacing="1">SENSOR</text>
-        <!-- Callout label above -->
-        <rect x="34" y="42" width="108" height="14" rx="3"
-              fill="rgba(74,155,196,0.15)" stroke="rgba(74,155,196,0.4)" stroke-width="0.8"/>
-        <text x="88" y="52" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="7" fill="rgba(168,212,232,0.85)" letter-spacing="0.5">JSN-SR04T · ultrasonic</text>
+        <text x="88" y="73" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="#a8d4e8" letter-spacing="1">SENSOR</text>
+        <rect x="34" y="42" width="108" height="14" rx="3" fill="rgba(74,155,196,0.15)" stroke="rgba(74,155,196,0.4)" stroke-width="0.8"/>
+        <text x="88" y="52" text-anchor="middle" font-family="DM Mono, monospace" font-size="7" fill="rgba(168,212,232,0.85)" letter-spacing="0.5">JSN-SR04T · ultrasonic</text>
         <line x1="88" y1="56" x2="88" y2="60" stroke="rgba(74,155,196,0.4)" stroke-width="0.8"/>
-        <!-- Pulse beam from sensor face to midpoint water surface (~198) -->
-        <line x1="88" y1="85" x2="88" y2="198"
-              stroke="#4a9bc4" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
+        <line x1="88" y1="85" x2="88" y2="198" stroke="#4a9bc4" stroke-width="1" stroke-dasharray="3,3" opacity="0.7"/>
         <polygon points="83,198 93,198 88,205" fill="#4a9bc4" opacity="0.6"/>
-        <!-- Depth bracket -->
-        <line x1="140" y1="85" x2="140" y2="198"
-              stroke="rgba(168,212,232,0.2)" stroke-width="0.8" stroke-dasharray="3,3"/>
-        <line x1="136" y1="85"  x2="144" y2="85"  stroke="rgba(168,212,232,0.2)" stroke-width="0.8"/>
-        <line x1="136" y1="198" x2="144" y2="198" stroke="rgba(168,212,232,0.2)" stroke-width="0.8"/>
-        <text x="147" y="145" font-family="DM Mono, monospace" font-size="7"
-              fill="rgba(168,212,232,0.35)" letter-spacing="0.5">depth h</text>
-
-        <!-- DOWNSTREAM water at culvert base level -->
         <rect x="335" y="238" width="165" height="36" fill="rgba(74,155,196,0.25)"/>
-        <line x1="335" y1="238" x2="500" y2="238"
-              stroke="rgba(168,212,232,0.3)" stroke-width="1"/>
-        <line x1="345" y1="252" x2="488" y2="252"
-              stroke="rgba(74,155,196,0.25)" stroke-width="1.5"
-              stroke-dasharray="7,5" class="flow-arrow-down"
-              marker-end="url(#arr-blue-faint)"/>
-        <text x="415" y="205" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="9" letter-spacing="1.5" fill="rgba(168,212,232,0.4)">DOWNSTREAM</text>
-        <text x="415" y="218" text-anchor="middle" font-family="DM Mono, monospace"
-              font-size="7.5" letter-spacing="1" fill="rgba(168,212,232,0.25)">NORMAL LEVEL</text>
-
-        <!-- LIVE badge -->
+        <line x1="335" y1="238" x2="500" y2="238" stroke="rgba(168,212,232,0.3)" stroke-width="1"/>
+        <line x1="345" y1="252" x2="488" y2="252" stroke="rgba(74,155,196,0.25)" stroke-width="1.5" stroke-dasharray="7,5" class="flow-arrow-down" marker-end="url(#arr-blue-faint)"/>
+        <text x="415" y="205" text-anchor="middle" font-family="DM Mono, monospace" font-size="9" letter-spacing="1.5" fill="rgba(168,212,232,0.4)">DOWNSTREAM</text>
         <rect x="10" y="10" width="138" height="22" rx="4" fill="rgba(0,0,0,0.45)"/>
         <circle cx="22" cy="21" r="4" fill="rgba(100,220,100,0.8)">
           <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/>
         </circle>
-        <text x="30" y="25" font-family="DM Mono, monospace" font-size="8.5"
-              letter-spacing="1.5" fill="rgba(168,212,232,0.85)">WATER LEVEL · LIVE</text>
+        <text x="30" y="25" font-family="DM Mono, monospace" font-size="8.5" letter-spacing="1.5" fill="rgba(168,212,232,0.85)">WATER LEVEL · LIVE</text>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- ── SYSTEM ── -->
+<!-- SYSTEM -->
 <section class="system" id="system">
   <div class="system-inner">
     <div class="system-header">
@@ -1084,14 +766,11 @@
         <span class="section-tag">How It Works</span>
         <h2 class="section-title">Four components.<br>One early warning.</h2>
       </div>
-      <p class="section-body system-body">
-        The system runs on standard off-the-shelf hardware — no proprietary lock-in, no cellular dependency, no mains power required.
-      </p>
+      <p class="section-body system-body">The system runs on standard off-the-shelf hardware — no proprietary lock-in, no cellular dependency, no mains power required.</p>
     </div>
 
     <div class="nodes">
       <div class="node-connector"></div>
-
       <div class="node-item active" onclick="showDetail(0)">
         <div class="node-dot">📡</div>
         <span class="node-label">Sensor Node</span>
@@ -1117,19 +796,19 @@
     <div class="node-detail">
       <div class="detail-content active" id="detail-0">
         <div class="detail-title">Sensor Node</div>
-        <p class="detail-body">A waterproof ultrasonic sensor (JSN-SR04T) is mounted on a pole above the water surface, pointing downward. It fires a 40kHz pulse, measures the echo return time, and calculates water depth. The ESP32 microcontroller wakes every few minutes, takes a reading, and transmits over LoRa radio — then goes back to sleep to preserve battery. No mains power. No cellular SIM.</p>
+        <p class="detail-body">A waterproof ultrasonic sensor (JSN-SR04T) is mounted on a pole above the water surface, pointing downward. It fires a 40kHz pulse, measures the echo return time, and measures the distance to the water surface. The device wakes every few minutes, takes a reading, and transmits over LoRa radio — then goes back to sleep to preserve battery. No mains power. No cellular SIM.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-blue">ESP32 microcontroller</span>
           <span class="spec-pill spec-blue">JSN-SR04T ultrasonic</span>
           <span class="spec-pill spec-blue">Solar option available</span>
-          <span class="spec-pill spec-gray">~$40–75 CAD/node</span>
+          <span class="spec-pill spec-gray">~$90 CAD/node</span>
         </div>
       </div>
       <div class="detail-content" id="detail-1">
         <div class="detail-title">LoRaWAN Gateway</div>
-        <p class="detail-body">A single gateway receives transmissions from sensor nodes up to 2–10km away over LoRa radio. No cellular network needed. One gateway can serve dozens of sensor nodes across a catchment area. It forwards data over standard internet (ethernet or WiFi) to the cloud network server. If LoRa coverage is unavailable at a site, NB-IoT or standard LTE are fallback options using the same sensor hardware.</p>
+        <p class="detail-body">A single gateway receives transmissions from sensor nodes up to 2–10km away over LoRa radio. No cellular network needed. One gateway can serve dozens of sensor nodes across a catchment area. It forwards data over standard internet to the cloud network server. If LoRa coverage is unavailable at a site, a mobile data plan can be used as a fallback.</p>
         <div class="detail-specs">
-          <span class="spec-pill spec-green">2–10 km radio range</span>
+          <span class="spec-pill spec-green">~2km urban · 10km+ line of sight</span>
           <span class="spec-pill spec-green">One gateway, many sensors</span>
           <span class="spec-pill spec-green">No cellular required</span>
           <span class="spec-pill spec-gray">NB-IoT fallback available</span>
@@ -1137,13 +816,12 @@
       </div>
       <div class="detail-content" id="detail-2">
         <div class="detail-title">Network Server</div>
-        <p class="detail-body">Rather than relying on public community coverage, a single gateway deployed at a Halifax Water facility gives full operational control over the network. One rooftop-mounted gateway can cover several kilometres of urban infrastructure. Data routes through The Things Stack — the same open-source network server software that powers TTN — which Halifax Water would operate privately. Alert logic runs here: configurable thresholds and rate-of-rise detection. Over time, readings correlate with Environment Canada rainfall data to build predictive models.</p>
+        <p class="detail-body">Once the gateway receives a reading from a sensor node, it passes the data to a server that decides what to do with it. This is where the alert rules live — if the water level crosses a set threshold, an alert fires. The server is privately operated, meaning Halifax Water's data stays under Halifax Water's control. Over time, readings are compared against rainfall data from Environment Canada to build a clearer picture of which culverts are most at risk and when.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-gray">Halifax Water-operated gateway</span>
           <span class="spec-pill spec-gray">The Things Stack (open source)</span>
           <span class="spec-pill spec-gray">Threshold + rate-of-rise logic</span>
           <span class="spec-pill spec-gray">Weather API integration</span>
-          <span class="spec-pill spec-gray">Full network ownership</span>
         </div>
       </div>
       <div class="detail-content" id="detail-3">
@@ -1160,7 +838,7 @@
   </div>
 </section>
 
-<!-- ── WHY LORAWAN ── -->
+<!-- WHY LORAWAN -->
 <section class="why">
   <div class="why-inner">
     <div class="why-header">
@@ -1168,19 +846,17 @@
         <span class="section-tag">Connectivity Options</span>
         <h2 class="section-title">Why LoRaWAN, and what if it isn't available?</h2>
       </div>
-      <p class="section-body why-body">
-        LoRaWAN is the preferred technology — but the sensor hardware works with multiple connectivity options. If LoRa coverage doesn't reach a specific site, we switch the radio module and keep everything else identical.
-      </p>
+      <p class="section-body why-body">LoRaWAN is the preferred technology — but the sensor hardware works with multiple connectivity options. If LoRa coverage doesn't reach a specific site, we switch the radio module and keep everything else identical.</p>
     </div>
     <div class="compare-grid">
       <div class="compare-card hero-card">
         <div class="compare-name">LoRaWAN</div>
         <span class="compare-badge badge-best">PREFERRED</span>
         <div class="compare-rows">
-          <div class="compare-row"><span class="cr-key">Range</span><span class="cr-val">2–10 km</span></div>
-          <div class="compare-row"><span class="cr-key">Running cost</span><span class="cr-val">Free (TTN)</span></div>
+          <div class="compare-row"><span class="cr-key">Range</span><span class="cr-val">~2km urban · 10km+ LoS</span></div>
+          <div class="compare-row"><span class="cr-key">Running cost</span><span class="cr-val">Low (self-hosted)</span></div>
           <div class="compare-row"><span class="cr-key">Battery life</span><span class="cr-val">6–18 months</span></div>
-          <div class="compare-row"><span class="cr-key">Coverage gaps</span><span class="cr-val">Rural sites</span></div>
+          <div class="compare-row"><span class="cr-key">Best for</span><span class="cr-val">Urban & semi-rural sites</span></div>
           <div class="compare-row"><span class="cr-key">Infrastructure</span><span class="cr-val">1 gateway needed</span></div>
         </div>
       </div>
@@ -1191,8 +867,7 @@
           <div class="compare-row"><span class="cr-key">Range</span><span class="cr-val">Cellular coverage</span></div>
           <div class="compare-row"><span class="cr-key">Running cost</span><span class="cr-val">~$5–10/mo per SIM</span></div>
           <div class="compare-row"><span class="cr-key">Battery life</span><span class="cr-val">3–12 months</span></div>
-          <div class="compare-row"><span class="cr-key">Coverage gaps</span><span class="cr-val">Very remote sites</span></div>
-          <div class="compare-row"><span class="cr-key">Infrastructure</span><span class="cr-val">None (uses Bell/Telus)</span></div>
+          <div class="compare-row"><span class="cr-key">Best for</span><span class="cr-val">Anywhere with cell signal</span></div>
         </div>
       </div>
       <div class="compare-card bad-card">
@@ -1202,7 +877,7 @@
           <div class="compare-row"><span class="cr-key">Range</span><span class="cr-val">Cellular coverage</span></div>
           <div class="compare-row"><span class="cr-key">Running cost</span><span class="cr-val">~$15–25/mo per SIM</span></div>
           <div class="compare-row"><span class="cr-key">Battery life</span><span class="cr-val">1–3 months</span></div>
-          <div class="compare-row"><span class="cr-key">Coverage gaps</span><span class="cr-val">Very remote sites</span></div>
+          <div class="compare-row"><span class="cr-key">Best for</span><span class="cr-val">Anywhere with cell signal</span></div>
           <div class="compare-row"><span class="cr-key">Infrastructure</span><span class="cr-val">None</span></div>
         </div>
       </div>
@@ -1210,7 +885,7 @@
   </div>
 </section>
 
-<!-- ── DETECTION ── -->
+<!-- DETECTION -->
 <section class="detection">
   <div class="detection-inner">
     <div class="detection-header">
@@ -1218,14 +893,10 @@
         <span class="section-tag">What Can Be Detected</span>
         <h2 class="section-title">More than just<br>rising water.</h2>
       </div>
-      <p class="section-body detection-body">
-        A single upstream sensor gives you two distinct alert types — flood early warning and blockage detection, from the same hardware. The difference lies in how fast the water rises and whether rainfall explains it.
-      </p>
+      <p class="section-body detection-body">A single upstream sensor gives you two distinct alert types — flood early warning and blockage detection, from the same hardware.</p>
     </div>
 
     <div class="detection-cards">
-
-      <!-- Flood detection -->
       <div class="detection-card">
         <span class="section-tag" style="color:var(--water); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; display:block;">Flood early warning</span>
         <div class="detection-card-title">Water level rising with rainfall</div>
@@ -1237,7 +908,6 @@
         </div>
       </div>
 
-      <!-- Blockage detection -->
       <div class="detection-card">
         <span class="section-tag" style="color:rgba(255,180,100,0.8); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; display:block;">Blockage detection</span>
         <div class="detection-card-title">Water rising faster than rain explains</div>
@@ -1249,11 +919,10 @@
         </div>
       </div>
 
-      <!-- Dual sensor card -->
       <div class="detection-card dual">
         <div>
           <div class="detection-card-title" style="margin-bottom:8px;">Phase 2: upstream + downstream sensors</div>
-          <p class="detection-card-body" style="margin-bottom:20px;">Adding a second sensor downstream of the culvert allows direct flow differential measurement. If upstream is rising but downstream is not, the culvert is blocked. This gives maintenance teams a precise, actionable signal even without rainfall context.</p>
+          <p class="detection-card-body" style="margin-bottom:20px;">Adding a second sensor downstream allows direct flow differential measurement. If upstream is rising but downstream is not, the culvert is blocked. This gives maintenance teams a precise, actionable signal even without rainfall context.</p>
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; align-self:start;">
           <div>
@@ -1268,7 +937,7 @@
           <div>
             <div class="dual-col-title con">Tradeoffs</div>
             <ul class="dual-list">
-              <li>~2× hardware cost per culvert (~$150 CAD)</li>
+              <li>~2× hardware cost per culvert (~$175 CAD)</li>
               <li>Two installation points per site</li>
               <li>Two potential failure points to maintain</li>
               <li>Downstream access can be difficult</li>
@@ -1276,22 +945,19 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ── PILOT ── -->
-<section class="pilot" id="pilot" style="padding-bottom:48px;">
+<!-- PILOT -->
+<section class="pilot" id="pilot">
   <div class="pilot-inner">
     <div class="pilot-header">
       <div>
         <span class="section-tag">Pilot Proposal</span>
         <h2 class="section-title">One site. Three months. No cost to Halifax Water.</h2>
       </div>
-      <p class="section-body pilot-body">
-        The proposal is deliberately small — a single proof-of-concept deployment at a known problem culvert. Data is advisory only. No operational dependency.
-      </p>
+      <p class="section-body pilot-body">The proposal is deliberately small — a single proof-of-concept deployment at a known problem culvert. Data is advisory only. No operational dependency.</p>
     </div>
     <div class="phases">
       <div class="phase">
@@ -1307,89 +973,43 @@
           <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Alert fires correctly when water level rises</li>
           <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Battery life exceeds 3 months in field conditions</li>
         </ul>
-        <div class="phase-cost">Hardware: ~$150 CAD · No ongoing cost to HW</div>
+        <div class="phase-cost">Hardware: ~$90 CAD · No ongoing cost to HW</div>
       </div>
       <div class="phase">
         <span class="phase-num">2</span>
         <span class="phase-tag">Months 4–9</span>
         <div class="phase-title">Multi-site expansion</div>
-        <p class="phase-body">Expand to 3–5 known problem sites across Halifax Water's network. This is where the system becomes a product. Sensor data is correlated with Environment Canada rainfall, per-culvert response curves are built, and anomaly detection begins to distinguish blockage from flood events. A shared dashboard gives Halifax Water real-time visibility across all monitored sites.</p>
-        <div class="phase-cost">Est. cost: ~$2,500–3,000 CAD · grant-fundable</div>
+        <p class="phase-body">Expand to 3–5 known problem sites across Halifax Water's network. Sensor data is correlated with Environment Canada rainfall, each site builds up a picture of how it behaves in different storm conditions, and anomaly detection begins to distinguish blockage from flood events. A shared dashboard gives Halifax Water real-time visibility across all monitored sites.</p>
+        <div class="phase-cost">Est. cost: ~$3,000–4,000 CAD · grant-fundable</div>
       </div>
       <div class="phase">
         <span class="phase-num">3</span>
         <span class="phase-tag">Year 2+</span>
         <div class="phase-title">Predictive intelligence</div>
-        <p class="phase-body">ML model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises, based on rainfall forecast and catchment characteristics. Node deployment scales across Halifax Water's full culvert and manhole network — and potentially province-wide across NSTIR road culverts and other NS municipalities. System becomes a permanent climate adaptation dataset for NS infrastructure.</p>
+        <p class="phase-body">ML model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises, based on rainfall forecast and catchment characteristics. Node deployment scales across Halifax Water's full culvert network — and potentially province-wide across NSTIR road culverts and other NS municipalities.</p>
         <div class="phase-cost">Potential grant funding via HRM, universities, or non-profit partners · province-wide scaling</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── MANHOLE ── -->
-<section class="manhole" style="padding-top:32px;">
-  <div class="manhole-inner">
-    <div class="manhole-header" style="margin-bottom:32px;">
-      <div>
-        <span class="section-tag" style="color:var(--tide);">Wastewater Network Application</span>
-        <h2 class="section-title" style="margin-bottom:12px;">Beyond Culverts</h2>
-        <p class="section-body" style="font-size:18px; color:var(--text-2); margin-bottom:0;">Application in manhole and wastewater networks.</p>
-      </div>
-      <p class="section-body manhole-body">
-        The same sensor hardware has a direct application inside manholes — monitoring wastewater and stormwater network surcharge before overflow occurs. The sensor mounts inside the lid pointing downward at the water level below. Hardware costs are slightly higher than culvert nodes due to the more demanding environment, and sensor selection differs, but the network architecture and data platform remain identical.
-      </p>
-    </div>
-
-    <ul style="list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:36px;">
-      <li style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background:white; border-radius:10px;">
-        <span style="color:var(--tide); font-size:18px; flex-shrink:0; margin-top:1px;">↑</span>
-        <div>
-          <span style="font-weight:500; font-size:14px; color:var(--text);">Surcharge early warning</span>
-          <span style="font-size:13px; color:var(--text-2);"> — alerts operations teams before overflow reaches the surface, avoiding public health incidents and regulatory breaches.</span>
-        </div>
-      </li>
-      <li style="display:flex; gap:14px; align-items:flex-start; padding:18px 22px; background:white; border-radius:10px;">
-        <span style="color:var(--tide); font-size:18px; flex-shrink:0; margin-top:1px;">〰</span>
-        <div>
-          <span style="font-weight:500; font-size:14px; color:var(--text);">Inflow &amp; infiltration detection</span>
-          <span style="font-size:13px; color:var(--text-2);"> — abnormal water rise in dry weather identifies where groundwater is entering the network, directly informing pipe rehabilitation priorities.</span>
-        </div>
-      </li>
-    </ul>
-
-    <div style="margin-top:20px; background:white; border-radius:14px; padding:28px; border-top:3px solid #c04a20;">
-      <div style="font-weight:500; font-size:15px; margin-bottom:10px; color:var(--text);">Technical considerations</div>
-      <p style="font-size:13px; line-height:1.65; color:var(--text-2);">Manholes require a different sensor to culverts due to the confined environment, corrosive atmosphere, and risk of submersion. Gateway placement is also more critical — rooftop mounting is required for reliable LoRaWAN signal penetration through the cover.</p>
-    </div>
-
-    <div class="signal-note">
-      <div class="signal-note-icon">📡</div>
-      <div class="signal-note-text">
-        <strong>Does LoRaWAN work through a metal manhole cover?</strong> Yes, with a rooftop-mounted gateway. Real-world tests confirm signal transmission through metal shaft covers over nearly 1km — even with a van parked on top — provided the gateway is elevated (35m in the documented case). Gateways below 10m show poor penetration. A site-by-site coverage survey would form part of any manhole pilot. <a href="https://smartmakers.io/en/lorawan-range-part-2-range-and-coverage-of-lorawan-in-practice/" target="_blank" style="color:var(--tide); font-size:12px; text-decoration:none; border-bottom:1px solid rgba(42,100,150,0.3);">Source: SmartMakers ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
+<!-- CONTACT -->
 <section style="background: var(--navy); text-align: center; padding: 80px 48px;">
   <h2 style="font-family: 'Instrument Serif', serif; font-size: clamp(28px,4vw,48px); letter-spacing:-1.5px; margin-bottom:16px;">Get in touch</h2>
   <p style="font-size:16px; color:rgba(255,255,255,0.5); max-width:420px; margin:0 auto 32px; font-weight:300; line-height:1.65;">Questions about the pilot proposal or the technology. Reach out directly.</p>
   <div style="display:inline-flex; flex-direction:column; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:24px 36px;">
     <span style="font-family:'Instrument Serif',serif; font-size:20px;">James Mathews</span>
-    <!--email_off--><a href="mailto:jamesm553@gmail.com" style="font-family:'DM Mono',monospace; font-size:12px; color:var(--water); letter-spacing:0.06em; text-decoration:none;">jamesm553@gmail.com</a><!--/email_off-->
+    <a href="mailto:jamesm553@gmail.com" style="font-family:'DM Mono',monospace; font-size:12px; color:var(--water); letter-spacing:0.06em; text-decoration:none;">jamesm553@gmail.com</a>
     <span style="font-family:'DM Mono',monospace; font-size:12px; color:rgba(255,255,255,0.35); letter-spacing:0.06em;">Technology Engineer · IoT &amp; Infrastructure</span>
   </div>
 </section>
 
-<footer>
+<footer style="background: rgba(0,0,0,0.3); padding: 24px 48px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.06);">
   <div class="logo">Culvert<span>Sense</span></div>
-  <p>PILOT PROPOSAL · HALIFAX WATER · 2026</p>
+  <p style="font-family:'DM Mono',monospace; font-size:11px; color:rgba(255,255,255,0.3); letter-spacing:0.06em;">PILOT PROPOSAL · HALIFAX WATER · 2026</p>
 </footer>
 
 <script>
-  // Define showDetail globally so inline onclick can find it
   window.showDetail = function(i) {
     document.querySelectorAll('.detail-content').forEach(d => d.classList.remove('active'));
     document.querySelectorAll('.node-item').forEach(n => n.classList.remove('active'));
@@ -1397,23 +1017,19 @@
     document.querySelectorAll('.node-item')[i].classList.add('active');
   };
 
-  // Also attach via addEventListener as fallback
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.node-item').forEach(function(el, i) {
       el.addEventListener('click', function() { window.showDetail(i); });
     });
   });
 
-  // smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       e.preventDefault();
-      document.querySelector(a.getAttribute('href'))
-        ?.scrollIntoView({ behavior: 'smooth' });
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
     });
   });
 
-  // subtle fade-in on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1423,4 +1039,12 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.fact-card, .compare-card, .phase, .
+  document.querySelectorAll('.fact-card, .compare-card, .phase').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
