@@ -671,7 +671,7 @@
   <div class="hero-content">
     <span class="hero-tag">LoRaWAN · Early Warning · Infrastructure</span>
     <h1 class="hero-title">Know before the<br><em>water rises</em></h1>
-    <p class="hero-sub">Low-cost wireless sensors that detect culvert flooding 30–60 minutes before overtopping, giving operations teams time to respond.</p>
+    <p class="hero-sub">Low-cost wireless sensors that provide early warning before culvert overtopping, giving operations teams time to respond.</p>
     <div class="hero-ctas">
       <a href="#system" class="btn-primary">See how it works</a>
       <a href="#pilot" class="btn-ghost">View pilot proposal</a>
@@ -681,7 +681,7 @@
   <div class="hero-stats">
     <div class="stat"><span class="stat-n">$170M+</span><span class="stat-l">NS insured flood losses, July 2023</span></div>
     <div class="stat"><span class="stat-n">4,000+</span><span class="stat-l">culvert & bridge structures in NS</span></div>
-    <div class="stat"><span class="stat-n">~$90</span><span class="stat-l">CAD hardware cost per node (est.)</span></div>
+    
     <div class="stat"><span class="stat-n">&lt; 2 min</span><span class="stat-l">alert latency from sensor to inbox</span></div>
   </div>
 </section>
@@ -801,7 +801,7 @@
           <span class="spec-pill spec-blue">ESP32 microcontroller</span>
           <span class="spec-pill spec-blue">JSN-SR04T ultrasonic</span>
           <span class="spec-pill spec-blue">Solar option available</span>
-          <span class="spec-pill spec-gray">~$90 CAD/node</span>
+          
         </div>
       </div>
       <div class="detail-content" id="detail-1">
@@ -826,10 +826,10 @@
       </div>
       <div class="detail-content" id="detail-3">
         <div class="detail-title">Alert</div>
-        <p class="detail-body">When a threshold is breached, a webhook fires within seconds, delivering an alert to email, SMS, or an operations dashboard. The 30–60 minute early warning window gives field crews time to inspect, close roads proactively, or deploy temporary measures. All data is logged for post-event analysis and model refinement.</p>
+        <p class="detail-body">When a threshold is breached, a webhook fires within seconds, delivering an alert to email, SMS, or an operations dashboard. The early warning gives field crews time to inspect, close roads proactively, or deploy temporary measures. All data is logged for post-event analysis and model refinement.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-amber">Email / SMS / dashboard</span>
-          <span class="spec-pill spec-amber">30–60 min early warning</span>
+          <span class="spec-pill spec-amber">Configurable early warning</span>
           <span class="spec-pill spec-amber">&lt; 2 min alert latency</span>
           <span class="spec-pill spec-amber">Configurable recipients</span>
         </div>
@@ -900,7 +900,7 @@
       <div class="detection-card">
         <span class="section-tag" style="color:var(--water); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; display:block;">Flood early warning</span>
         <div class="detection-card-title">Water level rising with rainfall</div>
-        <p class="detection-card-body">During intense rainfall, upstream water backs up against the culvert as flow exceeds capacity. The sensor detects the rising surface and fires an alert 30–60 minutes before overtopping, giving operations teams time to respond before road damage occurs.</p>
+        <p class="detection-card-body">During intense rainfall, upstream water backs up against the culvert as flow exceeds capacity. The sensor detects the rising surface and fires an alert before overtopping, giving operations teams time to respond before road damage occurs.</p>
         <div class="detail-specs">
           <span class="spec-pill spec-blue">Threshold alert</span>
           <span class="spec-pill spec-blue">Rate-of-rise alert</span>
@@ -937,7 +937,7 @@
           <div>
             <div class="dual-col-title con">Tradeoffs</div>
             <ul class="dual-list">
-              <li>~2× hardware cost per culvert (~$175 CAD)</li>
+              
               <li>Two installation points per site</li>
               <li>Two potential failure points to maintain</li>
               <li>Downstream access can be difficult</li>
@@ -973,20 +973,21 @@
           <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Alert fires correctly when water level rises</li>
           <li style="font-size:13px; color:rgba(255,255,255,0.5); padding-left:14px; position:relative;"><span style="position:absolute;left:0;color:rgba(255,255,255,0.2);">—</span>Battery life exceeds 3 months in field conditions</li>
         </ul>
-        <div class="phase-cost">Hardware: ~$90 CAD · No ongoing cost to HW</div>
+        <div class="phase-cost">No cost to Halifax Water</div>
       </div>
       <div class="phase">
         <span class="phase-num">2</span>
         <span class="phase-tag">Months 4–9</span>
         <div class="phase-title">Multi-site expansion</div>
         <p class="phase-body">Expand to 3–5 known problem sites across Halifax Water's network. Sensor data is correlated with Environment Canada rainfall, each site builds up a picture of how it behaves in different storm conditions, and anomaly detection begins to distinguish blockage from flood events. A shared dashboard gives Halifax Water real-time visibility across all monitored sites.</p>
-        <div class="phase-cost">Est. cost: ~$3,000–4,000 CAD · grant-fundable</div>
+        <div class="phase-cost">Deployment: ~$3,000–4,000 CAD · grant-fundable</div>
+        <div class="phase-cost" style="margin-top:8px;">Ongoing: platform retainer + per-node monthly fee</div>
       </div>
       <div class="phase">
         <span class="phase-num">3</span>
         <span class="phase-tag">Year 2+</span>
         <div class="phase-title">Predictive intelligence</div>
-        <p class="phase-body">ML model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises, based on rainfall forecast and catchment characteristics. Node deployment scales across Halifax Water's full culvert network — and potentially province-wide across NSTIR road culverts and other NS municipalities.</p>
+        <p class="phase-body">Machine learning model trained on sensor + weather + historical flood data. Predictive alerts fire before water rises, based on rainfall forecast and catchment characteristics. Node deployment scales across Halifax Water's full culvert network — and potentially province-wide across NSTIR road culverts and other NS municipalities.</p>
 
       </div>
     </div>
